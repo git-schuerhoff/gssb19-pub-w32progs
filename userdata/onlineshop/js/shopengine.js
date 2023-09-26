@@ -5165,7 +5165,7 @@ function processCheckout(nextStep,currStep, mustvalidate='False', params=''){
 							if (res == '1') {
 								showcustmenu();
 								Step = "cardsteptwo";
-								nStep(Step, '');
+								nStep(Step, params);
 							} else {
 								msg = get_lngtext('LangTagTextLoginError');
 								//Login fehlgeschlagen.
@@ -5183,7 +5183,7 @@ function processCheckout(nextStep,currStep, mustvalidate='False', params=''){
 				xhr.send('cemail=' + document.getElementById('cust_email').value + '&cpass=' + document.getElementById('cust_pass').value);
 			} else {
 				Step = "cardsteptwo";
-				nStep(Step, '');
+				nStep(Step, params);
 			}
 			break;
 		case 3:
@@ -5205,7 +5205,7 @@ function processCheckout(nextStep,currStep, mustvalidate='False', params=''){
 				}
 			}
 			if(currStep == 2){
-				params = '&PrivatOderFirma=' + document.getElementById('PrivatOderFirma').options.selectedIndex;
+				params = params + '&PrivatOderFirma=' + document.getElementById('PrivatOderFirma').options.selectedIndex;
 				params = params + '&mrormrs=' + document.getElementById('mrormrs').options.selectedIndex;
                 params = params + '&mrormrsText=' + document.getElementById('mrormrs').options[document.getElementById('mrormrs').options.selectedIndex].innerHTML;
 				params = params + '&firstname=' + document.getElementById('firstname').value;
