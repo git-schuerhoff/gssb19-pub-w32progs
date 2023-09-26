@@ -213,7 +213,7 @@ $months = array (L_dynsb_month01,
 			 var winHoehe = 600;
 			 x = Math.round((screen.width-winBreite)/2);
 			 y = Math.round((screen.height-winHoehe)/2);
-		   var helpwin=window.open('mod.gssalevalue.detail.php?t='+t+'&lang=<?echo $lang;?>','help','left='+x+',top='+y+',width='+winBreite+',height='+winHoehe+',scrollbars=no,resizable');
+		   var helpwin=window.open('mod.gssalevalue.detail.php?t='+t+'&lang=<?php echo $lang;?>','help','left='+x+',top='+y+',width='+winBreite+',height='+winHoehe+',scrollbars=no,resizable');
 			 helpwin.focus();
 		  }
 	  </script>

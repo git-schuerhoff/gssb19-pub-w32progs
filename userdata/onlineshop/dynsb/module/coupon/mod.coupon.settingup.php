@@ -140,7 +140,7 @@ if(strtolower($act) == "b" || strtolower($act) == "c")
 
       iMyWidth = Math.round((window.screen.width/2) - (400/2 + 10));
       iMyHeight = Math.round((window.screen.height/2) - (180/2 + 40));
-      var winNew = window.open('mod.coupon.select.file.php?strcal=<?echo $strcal;?>&lang=<?echo $lang;?>', 'upload',"height=180,width=400,menubar=no,location=no,resizable=no,scrollbars=no,left="+iMyWidth+",top="+iMyHeight+"");
+      var winNew = window.open('mod.coupon.select.file.php?strcal=<?php echo $strcal;?>&lang=<?php echo $lang;?>', 'upload',"height=180,width=400,menubar=no,location=no,resizable=no,scrollbars=no,left="+iMyWidth+",top="+iMyHeight+"");
       winNew.focus();
     }
     //--------------------------------------------------------------------------

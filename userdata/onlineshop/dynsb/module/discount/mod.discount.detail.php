@@ -172,7 +172,7 @@ if($start < 0) $start = 0;
       {
         custtxt = custtxt+"_"+SelectBox[0].options[a].value;
       }
-      document.location = 'mod.discount.save.php?custtxt='+custtxt+'&cDis='+discount+'&lang=<?echo $lang;?>';
+      document.location = 'mod.discount.save.php?custtxt='+custtxt+'&cDis='+discount+'&lang=<?php echo $lang;?>';
     }
     //--------------------------------------------------------------------------
     function navigation(val)
@@ -189,7 +189,7 @@ if($start < 0) $start = 0;
     //--------------------------------------------------------------------------
     function displayCusDetails(cusID)
     {
-      dis = window.open('mod.discount.cusdetails.php?cusID='+cusID+'&lang=<?echo $lang;?>','my','toolbar=0,scrollbars,resizable=1,status=no,width=700,height=720');
+      dis = window.open('mod.discount.cusdetails.php?cusID='+cusID+'&lang=<?php echo $lang;?>','my','toolbar=0,scrollbars,resizable=1,status=no,width=700,height=720');
       dis.focus();
     }
     </script>

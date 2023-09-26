@@ -208,5 +208,24 @@ if ($this->get_setting('cbImageZoom_Checked') == 'False'  || !$this->get_setting
 	$detailboxnew = str_replace('class="zoomWrapper"','class="zoomWrapper" style="display:none;"',$detailboxnew);
 }
 
+// In Stock quantity
+$checkinstock = $this->get_setting('cbInStockQuantityCheck_Checked');
+if($checkinstock != 'False'){
+	$con = $this->db_connect();
+	$sql = "SELECT itemInStockQuantity FROM ".$this->dbtoken."itemdata WHERE itemItemNumber ='".$_SESSION['aitem']['itemItemNumber']."'";
+	$qry = @mysqli_query($con,$sql);
+	$obj = @mysqli_fetch_array($qry);
+	if(floor($obj['itemInStockQuantity']) > 0){
+		$detailboxnew = str_replace('{GSSE_INCL_INSTOCK}','<br><div class="short-description"><span>'.floor($obj['itemInStockQuantity']).' '.$this->get_lngtext("LangTagInStockText").'</span></div>',$detailboxnew);
+	} else {
+		$msg = $this->get_setting('edStock_Text');
+		$detailboxnew = str_replace('{GSSE_INCL_INSTOCK}','<br><div class="short-description"><span>'.$msg.'</span></div>',$detailboxnew);
+		$detailboxnew = str_replace('{GSSE_INCL_ADDSTYLE}','display:none;',$detailboxnew);
+	}
+} else {
+	$detailboxnew = str_replace('{GSSE_INCL_ADDSTYLE}','',$detailboxnew);
+	$detailboxnew = str_replace('{GSSE_INCL_INSTOCK}','',$detailboxnew);
+}
+
 $this->content = str_replace($tag, $detailboxnew, $this->content);
 ?>

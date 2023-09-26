@@ -107,9 +107,9 @@ if($SESS_languageIdNo == 2) $strcal = "en";
 require_once("../../include/page.header.php");
 ?>
 <div id="PGdataimportdetail">
-	<input type='hidden' name='lang' value='<?echo $lang;?>'>
-	<input type='hidden' name='act' value='<?echo $act;?>'>
-	<input type='hidden' name='nfIdNo' value='<?echo $nfIdNo?>'>
+	<input type='hidden' name='lang' value='<?php echo $lang;?>'>
+	<input type='hidden' name='act' value='<?php echo $act;?>'>
+	<input type='hidden' name='nfIdNo' value='<?php echo $nfIdNo?>'>
 
 <h1>&#187;&nbsp;<?php echo L_dynsb_Newsfeed;?>&nbsp;&#171;</h1>
 <h2><?php echo L_dynsb_nfEditDetails;?></h2>

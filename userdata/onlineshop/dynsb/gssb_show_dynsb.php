@@ -72,13 +72,13 @@ $BestsellerPos =  getBestsellerPosition($current_itemNumber);
 ?>
 <br />
 <table border='0' width='60%' border='0' class="login">
-  <tr><td colspan='2'><?echo $current_itemNumber." - ".$itemItemDescription;?></td></tr>
-  <tr><td style="background-color:white"><?echo L_dynsb_Language;?>:</td><td style="background-color:white" align='center'><?echo $current_LanguageId;?></td></tr>
-  <tr><td><?echo L_dynsb_CreatedOn;?>:</td><td align='center'><?echo $itemCreateTime;?></td></tr>
-  <tr><td style="background-color:white"><?echo L_dynsb_UpdatedOn;?>:</td><td style="background-color:white" align='center'><?echo $itemUpdateTime;?></td></tr>
-  <tr><td><?echo L_dynsb_PositionOfBestsellerList;?>:</td><td align='center'><?echo $BestsellerPos;?></td></tr>
-  <tr><td style="background-color:white"><?echo L_dynsb_NumberOfOrder;?>:</td><td style="background-color:white" align='center'><?echo $OrderCount;?></td></tr>
-  <tr><td><?echo L_dynsb_ArticleViews;?>:</td><td align='center'><?echo $ItemViews;?></td></tr>
+  <tr><td colspan='2'><?php echo $current_itemNumber." - ".$itemItemDescription;?></td></tr>
+  <tr><td style="background-color:white"><?php echo L_dynsb_Language;?>:</td><td style="background-color:white" align='center'><?php echo $current_LanguageId;?></td></tr>
+  <tr><td><?php echo L_dynsb_CreatedOn;?>:</td><td align='center'><?php echo $itemCreateTime;?></td></tr>
+  <tr><td style="background-color:white"><?php echo L_dynsb_UpdatedOn;?>:</td><td style="background-color:white" align='center'><?php echo $itemUpdateTime;?></td></tr>
+  <tr><td><?php echo L_dynsb_PositionOfBestsellerList;?>:</td><td align='center'><?php echo $BestsellerPos;?></td></tr>
+  <tr><td style="background-color:white"><?php echo L_dynsb_NumberOfOrder;?>:</td><td style="background-color:white" align='center'><?php echo $OrderCount;?></td></tr>
+  <tr><td><?php echo L_dynsb_ArticleViews;?>:</td><td align='center'><?php echo $ItemViews;?></td></tr>
 </table>
 </center>
 </body>

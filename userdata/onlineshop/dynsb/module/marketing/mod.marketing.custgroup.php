@@ -237,7 +237,7 @@ if (isset($_REQUEST['show_edit']))
   <table>
   <tr>
     <td valign="top">
-		<input type="hidden" name="lang" value="<?echo $lang;?>">
+		<input type="hidden" name="lang" value="<?php echo $lang;?>">
 		<p><input type="hidden" name="editId" value='<?php echo $obj->cgId;?>'>
 	    </p>
 		

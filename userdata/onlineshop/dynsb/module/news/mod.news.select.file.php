@@ -38,7 +38,7 @@ if(isset($_REQUEST['nid'])) {
 <html>
 <head>
     <title>
-        <?echo L_dynsb_ChooseImage;?>
+        <?php echo L_dynsb_ChooseImage;?>
     </title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta content="de" http-equiv="Language">

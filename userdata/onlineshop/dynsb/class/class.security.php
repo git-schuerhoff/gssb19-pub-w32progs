@@ -165,6 +165,7 @@ class Security {
         if($svrConn) {
                 $strQuery = "SELECT {$this->__FieldNameSess} FROM {$this->__StoreSessionTableName} ";
                 $strQuery .= "WHERE {$this->__FieldNameSess} = '" . session_id() . "'";
+			  		//var_dump($strQuery);
                 $results = @mysqli_query($svrConn,$strQuery);
                 if($result = @mysqli_fetch_array($results)) {
                  	// update of table 'session' column 'lastAccess'
@@ -174,9 +175,9 @@ class Security {
                         $res = @mysqli_query($svrConn,$strQuery);
                     }
                     mysqli_close($svrConn);
-                    return $result;
+                    return 1;//$result; // 19.06.2020 - bei einigen Weiterleitungen wird die Session neu gestartet und damit diese Überprüfung falsch interpretiert
                 } else {
-                    return 0;
+                    return 1;//0;// 19.06.2020 - bei einigen Weiterleitungen wird die Session neu gestartet und damit diese Überprüfung falsch interpretiert
                 }
             
         } else {

@@ -26,7 +26,7 @@ include("lang/lang_".$lang.".php");
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <title><?echo L_dynsb_Failure;?></title>
+  <title><?php echo L_dynsb_Failure;?></title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta content="de" http-equiv="Language">
   <meta name="author" content="GS Software Solutions GmbH">

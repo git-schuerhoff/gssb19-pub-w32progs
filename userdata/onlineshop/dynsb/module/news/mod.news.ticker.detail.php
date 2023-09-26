@@ -126,8 +126,8 @@ require_once("../../include/page.header.php");
   <td align="right"><?php echo L_dynsb_Activ;?>:&nbsp;</td>
   <td>
   	<select name="ntShowFlg">
-      <option value="0" <?php if($ntShowFlg == 0) echo "selected";?>><?echo L_dynsb_No;?></option>
-      <option value="1" <?php if($ntShowFlg == 1) echo "selected";?>><?echo L_dynsb_Yes;?></option>
+      <option value="0" <?php if($ntShowFlg == 0) echo "selected";?>><?php echo L_dynsb_No;?></option>
+      <option value="1" <?php if($ntShowFlg == 1) echo "selected";?>><?php echo L_dynsb_Yes;?></option>
   	</select>
   </td>
 </tr>

@@ -188,9 +188,9 @@ if(isset($_REQUEST['show_new']))
     <h2><?php echo L_dynsb_Quantity;?></h2>
       <p>
     	<?php echo L_dynsb_From;?>
-      <input type="text" id="edit_fromqty" value='<?echo $obj->avaMinQty;?>' name="edit_fromqty" size="3" onchange="CheckMinMax()">
+      <input type="text" id="edit_fromqty" value='<?php echo $obj->avaMinQty;?>' name="edit_fromqty" size="3" onchange="CheckMinMax()">
       <?php echo L_dynsb_To?>
-      <input type="text" id="edit_toqty" value='<?echo $obj->avaMaxQty;?>' name="edit_toqty" size="3" onchange="CheckMinMax()">
+      <input type="text" id="edit_toqty" value='<?php echo $obj->avaMaxQty;?>' name="edit_toqty" size="3" onchange="CheckMinMax()">
     </p>
 
     <h2><?php echo L_dynsb_Description2;?></h2>
@@ -224,7 +224,7 @@ if (isset($_REQUEST['show_edit']))
   <table>
   <tr>
     <td valign="top">
-		<input type="hidden" name="lang" value="<?echo $lang;?>">
+		<input type="hidden" name="lang" value="<?php echo $lang;?>">
     	<h2><?php echo L_dynsb_Color;?></h2>
 		<p><input type="hidden" name="editId" value='<?php echo $obj->avaId;?>'>
 	 	<input type="text" id="edit_col_preview" 	name="col_preview" readonly>
@@ -243,9 +243,9 @@ if (isset($_REQUEST['show_edit']))
 	    <h2><?php echo L_dynsb_Quantity;?></h2>
       <p>
       	<?php echo L_dynsb_From;?>
-        <input type="text" id="edit_fromqty" value='<?echo $obj->avaMinQty;?>' name="edit_fromqty" size="3" onchange="CheckMinMax()">
+        <input type="text" id="edit_fromqty" value='<?php echo $obj->avaMinQty;?>' name="edit_fromqty" size="3" onchange="CheckMinMax()">
         <?php echo L_dynsb_To?>
-        <input type="text" id="edit_toqty" value='<?echo $obj->avaMaxQty;?>' name="edit_toqty" size="3" onchange="CheckMinMax()">
+        <input type="text" id="edit_toqty" value='<?php echo $obj->avaMaxQty;?>' name="edit_toqty" size="3" onchange="CheckMinMax()">
  
 	    </p>
 
@@ -268,8 +268,8 @@ if (isset($_REQUEST['show_edit']))
 </form>
 
 <script language="JavaScript" type="text/javascript">
-  document.getElementById('edit_col').value = '<?echo $obj->avaColor;?>';
-  document.getElementById('edit_col_preview').style.backgroundColor = '<?echo $obj->avaColor;?>';
+  document.getElementById('edit_col').value = '<?php echo $obj->avaColor;?>';
+  document.getElementById('edit_col_preview').style.backgroundColor = '<?php echo $obj->avaColor;?>';
 </script>
 <?php
   }
@@ -299,7 +299,7 @@ while($obj = @mysqli_fetch_object($qry))
 		</a>
 	</td>
   <td style="font-weight: bold; background-color: <?php echo $obj->avaColor;?>;" align="center"><?php echo $obj->avaColor;?></td>
-  <td><?php echo L_dynsb_From;?> <?echo $obj->avaMinQty;?> <?php echo L_dynsb_To?> <?echo $obj->avaMaxQty;?></td>
+  <td><?php echo L_dynsb_From;?> <?php echo $obj->avaMinQty;?> <?php echo L_dynsb_To?> <?php echo $obj->avaMaxQty;?></td>
   <td><?php echo $obj->avaDescription;?></td>
 </tr>
 <?php

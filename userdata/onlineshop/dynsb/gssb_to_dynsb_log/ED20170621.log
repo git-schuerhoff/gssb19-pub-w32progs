@@ -1,0 +1,48 @@
+2017-06-21 07:59:34 -> DELETE FROM dsb18_itemdata WHERE itemLanguageId = 'deu' => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_downloadarticle WHERE 1 => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_itemdownloads WHERE languageId = 'deu' => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_item_to_variant WHERE 1 => OK
+2017-06-21 07:59:34 -> Table 'sb19.dsb18_upselling' doesn't exist:
+DELETE FROM dsb18_upselling WHERE 1
+2017-06-21 07:59:34 -> DELETE FROM dsb18_crossselling WHERE 1 => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_bundles WHERE languageId = 'deu' AND bundleLanguageId = 'deu' => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_itemcentraltext WHERE languageId = 'deu' AND countryId = 'deu' => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_action WHERE 1 => OK
+2017-06-21 07:59:34 -> Table 'sb19.dsb18_price' doesn't exist:
+DELETE FROM dsb18_price WHERE prcCountryId = 'deu'
+2017-06-21 07:59:34 -> Table 'sb19.dsb18_pricehistory' doesn't exist:
+DELETE FROM dsb18_pricehistory WHERE prchlanguageId = 'deu'
+2017-06-21 07:59:34 -> Table 'sb19.dsb18_productgrouplanguage' doesn't exist:
+DELETE FROM dsb18_productgrouplanguage WHERE 1
+2017-06-21 07:59:34 -> Table 'sb19.dsb18_productgroups' doesn't exist:
+DELETE FROM dsb18_productgroups WHERE 1
+2017-06-21 07:59:34 -> Table 'sb19.dsb18_specshipprices' doesn't exist:
+DELETE FROM dsb18_specshipprices WHERE 1
+2017-06-21 07:59:34 -> DELETE FROM dsb18_gallery WHERE 1 => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_items2group WHERE 1 => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_addressarea WHERE LanguageId = 'deu' AND CountryId = 'deu' => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_contentpool WHERE LanguageId = 'deu' => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_deliveryarea WHERE CountryId = 'deu' => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_deliverycountry WHERE CountryId = 'deu' => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_deliverylanguage WHERE LanguageId = 'deu' => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_languagename WHERE 1 => OK
+2017-06-21 07:59:34 -> Table 'sb19.dsb18_paymentcountry' doesn't exist:
+DELETE FROM dsb18_paymentcountry WHERE CountryId = 'deu'
+2017-06-21 07:59:34 -> Table 'sb19.dsb18_paymentlanguage' doesn't exist:
+DELETE FROM dsb18_paymentlanguage WHERE LanguageId = 'deu'
+2017-06-21 07:59:34 -> Table 'sb19.dsb18_salestax' doesn't exist:
+DELETE FROM dsb18_salestax WHERE CountryId = 'deu'
+2017-06-21 07:59:34 -> Table 'sb19.dsb18_setting' doesn't exist:
+DELETE FROM dsb18_setting WHERE LanguageId = 'deu' AND CountryId = 'deu'
+2017-06-21 07:59:34 -> Table 'sb19.dsb18_settingmemo' doesn't exist:
+DELETE FROM dsb18_settingmemo WHERE LanguageId = 'deu' AND CountryId = 'deu'
+2017-06-21 07:59:34 -> Table 'sb19.dsb18_shippingweightcost' doesn't exist:
+DELETE FROM dsb18_shippingweightcost WHERE CountryId = 'deu'
+2017-06-21 07:59:34 -> DELETE FROM dsb18_attributes WHERE 1 => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_countriesareas WHERE 1 => OK
+2017-06-21 07:59:34 -> Table 'sb19.dsb18_paymentinternalnames' doesn't exist:
+DELETE FROM dsb18_paymentinternalnames WHERE 1
+2017-06-21 07:59:34 -> DELETE FROM dsb18_generalinfo WHERE 1 => OK
+2017-06-21 07:59:34 -> DELETE FROM dsb18_kattags WHERE LanguageId = 'deu' => OK
+2017-06-21 07:59:34 -> Table 'sb19.dsb18_slideshow' doesn't exist:
+DELETE FROM dsb18_slideshow WHERE 1

@@ -146,7 +146,7 @@ require_once("../../include/page.header.php");
 
 <div class="footer">
   <input type="button" class="button" onclick="javascript:submitForm('frmGStempEdit');" name="btn_save" value="<?php echo L_dynsb_Save;?>">
-  <input type="button" class="button" onclick="javascript:self.location.href='mod.custdownloads.view.php?pk=<?php echo $_REQUEST['cid'];?>&start=<?php echo $start;?>&lang=<?echo $lang;?>';" name="btn_save" value="<?php echo L_dynsb_Cancel;?>">
+  <input type="button" class="button" onclick="javascript:self.location.href='mod.custdownloads.view.php?pk=<?php echo $_REQUEST['cid'];?>&start=<?php echo $start;?>&lang=<?php echo $lang;?>';" name="btn_save" value="<?php echo L_dynsb_Cancel;?>">
 </div>
 
 </div>

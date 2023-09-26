@@ -12,7 +12,7 @@ if(trim($_SESSION['aitem']['itemDetailText1']) != '') {
 }
 $detailsslider = str_replace('{GSSE_INCL_EXDESC}',$detailtext,$detailsslider);
 if($detailtext == ''){
-    $detailsslider = str_replace('{GSSE_CLASS_EXDESC}','display:none',$detailsslider);
+    $detailsslider = str_replace('{GSSE_CLASS_EXDESC}','no-display',$detailsslider);
 } else {
     $detailsslider = str_replace('{GSSE_CLASS_EXDESC}','moretexts',$detailsslider);
 }

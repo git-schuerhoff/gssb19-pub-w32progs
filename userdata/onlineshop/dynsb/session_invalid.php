@@ -47,7 +47,7 @@ $Session->destroy();
 
 if (window.name != '')
 	{
-		top.location.href="session_invalid.php?lang=<?echo $lang;?>";
+		top.location.href="session_invalid.php?lang=<?php echo $lang;?>";
 
 	}
 

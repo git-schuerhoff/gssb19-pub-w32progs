@@ -32,7 +32,7 @@ $link->query("SET NAMES 'utf8'");
 <html>
     <head>
         <title>
-            <?echo L_dynsb_ChooseImage;?>
+            <?php echo L_dynsb_ChooseImage;?>
         </title>
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
         <meta content="de" http-equiv="Language">
@@ -58,12 +58,12 @@ document.frmLogo.submit();
         <table border="0" class="frame" cellspacing="0" cellpadding="0" width="380">
             <tr>
                 <td colspan="2" height="22" class="tablecolor1_bb">
-                    <?echo L_dynsb_FileUpload;?>
+                    <?php echo L_dynsb_FileUpload;?>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" height="44" class="select_normal_title2">
-                    &nbsp;&nbsp;<?echo L_dynsb_PleaseChooseImageJPGorGIForPNG;?>
+                    &nbsp;&nbsp;<?php echo L_dynsb_PleaseChooseImageJPGorGIForPNG;?>
                 </td>
             </tr>
             <tr>

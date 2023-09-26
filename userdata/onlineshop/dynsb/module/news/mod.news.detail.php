@@ -108,7 +108,7 @@ if($SESS_languageIdNo == 2) $strcal = "en";
 
       iMyWidth = Math.round((window.screen.width/2) - (400/2 + 10));
       iMyHeight = Math.round((window.screen.height/2) - (180/2 + 40));
-      var winNew = window.open('mod.news.select.file.php?nid='+document.frmNews.newsIdNo.value+'&lang=<?echo $lang;?>', 'upload',"height=180,width=400,menubar=no,location=no,resizable=no,scrollbars=no,left="+iMyWidth+",top="+iMyHeight+"");
+      var winNew = window.open('mod.news.select.file.php?nid='+document.frmNews.newsIdNo.value+'&lang=<?php echo $lang;?>', 'upload',"height=180,width=400,menubar=no,location=no,resizable=no,scrollbars=no,left="+iMyWidth+",top="+iMyHeight+"");
       winNew.focus();
     }
     //--------------------------------------------------------------------------

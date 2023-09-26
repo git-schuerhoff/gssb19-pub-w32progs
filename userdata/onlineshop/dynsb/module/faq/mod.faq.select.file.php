@@ -39,7 +39,7 @@ if(isset($_REQUEST['nid'])) {
 <html>
 <head>
 <title>
-  <?echo L_dynsb_ChooseImage;?>
+  <?php echo L_dynsb_ChooseImage;?>
 </title>
 
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
@@ -74,11 +74,11 @@ function startUpload()
 require_once("../../include/page.header.php");
 ?>
 <div id="PGfaqselectfile">
-  <input type="hidden" name="lang" value="<?echo $lang;?>">
+  <input type="hidden" name="lang" value="<?php echo $lang;?>">
   <input type="hidden" name="MAX_FILE_SIZE" value="30000000">
   <input type="hidden" name="nid" value="<?php echo $nid;?>">
 
-<h1><?echo L_dynsb_FileUpload;?></h1>
+<h1><?php echo L_dynsb_FileUpload;?></h1>
 <p>
 	<?php echo L_dynsb_PleaseChooseImageJPGorGIF;?>
 </p>

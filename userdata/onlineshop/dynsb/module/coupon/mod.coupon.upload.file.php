@@ -54,7 +54,7 @@ if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploaddir.$_FILES['user
 ?>
 <script language="JavaScript">
 <!--
-alert('<?echo L_dynsb_InvalidImageFile;?>\n<?echo L_dynsb_ChooseAnotherOne;?>');
+alert('<?php echo L_dynsb_InvalidImageFile;?>\n<?php echo L_dynsb_ChooseAnotherOne;?>');
 // -->
 </script>
 <?php

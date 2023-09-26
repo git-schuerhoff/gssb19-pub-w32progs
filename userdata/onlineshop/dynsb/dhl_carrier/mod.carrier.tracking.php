@@ -382,7 +382,7 @@ while ($obj = @mysqli_fetch_object($qry))
 <tr id="d<?php echo $obj->ordIdNo;?>" class="<?php echo $rowStyle;?>">
 	<!-- DHL Tracking -->
 	<td>
-	  <a href='./dhltracking.php?pk=<?echo $obj->ordIdNo;?>&lang=<?echo $lang;?>'>
+	  <a href='./dhltracking.php?pk=<?php echo $obj->ordIdNo;?>&lang=<?php echo $lang;?>'>
 	    <img src="../image/packet.gif" height="13" alt="<?php echo L_dynsb_DHLtrackingNumber;?>">
 	  </a>
 	 <!-- To keep the highlighting function working-->

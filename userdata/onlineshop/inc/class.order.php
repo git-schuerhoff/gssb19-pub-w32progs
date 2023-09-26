@@ -129,7 +129,7 @@ class Order{
         mysqli_free_result($erg);
 		mysqli_close($dbh);
         if(is_array($customer)){
-            //$this->setCustomer($customer);
+            $this->setCustomer($customer);
 			$this->getCustomerDiscountPercent();
             return $this->Customer;
         } else {
@@ -164,7 +164,8 @@ class Order{
         $cusId = $startNo['SettingMemo'];
         $customer['cusId'] = $cusId;
 		$this->setCustomer($customer);
-        $sql = 'INSERT INTO ' . $this->se->dbtoken . 'customer (cusId, cusFirmname, cusFirmVATId, cusTitle, cusFirstName, cusLastName, cusStreet, cusStreet2, cusZipCode, cusCity, cusCountry, cusEMail, cusPhone, cusPassword, cusEMailFormat, cusDeliverFirmname, cusDeliverTitle, cusDeliverFirstName, cusDeliverLastName, cusDeliverStreet, cusDeliverStreet2, cusDeliverZipCode, cusDeliverCity, cusDeliverCountry, cusData, cusChgTimestamp) VALUES ("'.$cusId.'","'.$customer['company'].'","'.$customer['firmVATId'].'","'.$customer['mrormrsText'].'","'.$customer['firstname'].'","'.$customer['lastname'].'","'.$customer['street'].'","'.$customer['street2'].'","'.$customer['zip'].'","'.$customer['city'].'","'.$customer['areaName'].'","'.$customer['cust_email'].'","'.$customer['phone'].'","'.$customer['cust_pass'].'","html","'.$customer['company'].'","'.$customer['mrormrsText'].'","'.$customer['firstname'].'","'.$customer['lastname'].'","'.$customer['street'].'","'.$customer['street2'].'","'.$customer['zip'].'","'.$customer['city'].'","'.$customer['areaName'].'","",CURRENT_TIMESTAMP)';
+        $sql = 'INSERT INTO ' . $this->se->dbtoken . 'customer (cusId, cusFirmname, cusFirmVATId, cusTitle, cusFirstName, cusLastName, cusStreet, cusStreet2, cusZipCode, cusCity, cusCountry, cusEMail, cusPhone, cusPassword, cusEMailFormat, cusDeliverFirmname, cusDeliverTitle, cusDeliverFirstName, cusDeliverLastName, cusDeliverStreet, cusDeliverStreet2, cusDeliverZipCode, cusDeliverCity, cusDeliverCountry) VALUES ("'.$cusId.'","'.$customer['company'].'","'.$customer['firmVATId'].'","'.$customer['mrormrsText'].'","'.$customer['firstname'].'","'.$customer['lastname'].'","'.$customer['street'].'","'.$customer['street2'].'","'.$customer['zip'].'","'.$customer['city'].'","'.$customer['areaName'].'","'.$customer['cust_email'].'","'.$customer['phone'].'","'.$customer['cust_pass'].'","html","'.$customer['company'].'","'.$customer['mrormrsText'].'","'.$customer['firstname'].'","'.$customer['lastname'].'","'.$customer['street'].'","'.$customer['street2'].'","'.$customer['zip'].'","'.$customer['city'].'","'.$customer['areaName'].'")';
+        
         $erg = mysqli_query($con,$sql);
     }
     
@@ -746,8 +747,22 @@ class Order{
 	
 	public function writeOrder(){
 		$aPosData = array();
-		for($x = 1; $x <= count($this->Basket); $x++)
+		$maxBasket = count($this->Basket);
+		$con = $this->se->db_connect();
+		$checkinstock = $this->se->get_setting('cbInStockQuantityCheck_Checked');
+		
+		for($x = 1; $x <= $maxBasket; $x++)
 		{
+			if($checkinstock != 'False'){
+				$sql = "SELECT itemInStockQuantity FROM ".$this->se->dbtoken."itemdata WHERE itemItemNumber ='".$this->Basket[$x-1]['art_num']."'";
+				$qry = @mysqli_query($con,$sql);
+				$obj = @mysqli_fetch_array($qry);
+				if($obj['itemInStockQuantity'] == 0){
+					return $this->Basket[$x-1]['art_num'].'iszero';
+				}elseif($obj['itemInStockQuantity'] < $this->Basket[$x-1]['art_count']){
+					return $this->Basket[$x-1]['art_num'].'instockquantity'.$obj['itemInStockQuantity'];
+				}
+			}
 			if($this->Basket[$x-1]['art_num'] != null){
 				$aPosData[$x]['ordpItemId'] = $this->Basket[$x-1]['art_num'];
 				$aPosData[$x]['ordpItemDesc'] = base64_encode($this->Basket[$x-1]['art_title']);
@@ -993,7 +1008,7 @@ class Order{
 				$SQLava = "Update ".$this->se->dbtoken."itemdata set itemInStockQuantity = '".$stock."' where itemItemNumber='".$objitem->itemItemNumber."'";
 				$qryava = @mysqli_query($con,$SQLava);
 
-				$SQLpos = "INSERT INTO ".$this->se->dbtoken."orderpos (ordpOrdIdNo,ordpPosNo,".$this->removeLastChr($sPosKeys).",ordpChgHistoryFlg,ordpChgTimestamp) VALUES ('".$ordIdNo."','".$x."',".$this->removeLastChr($sPosValues).",'1',CURRENT_TIMESTAMP)";
+				$SQLpos = "INSERT INTO ".$this->se->dbtoken."orderpos (ordpOrdIdNo,ordpPosNo,".$this->removeLastChr($sPosKeys).",ordpChgHistoryFlg) VALUES ('".$ordIdNo."','".$x."',".$this->removeLastChr($sPosValues).",'1')";
 				$qrypos = @mysqli_query($con,$SQLpos);
 			}
             

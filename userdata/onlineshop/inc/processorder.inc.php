@@ -95,7 +95,9 @@ if(isset($_POST['sepamandat'])){
 	$order->setCustomer($customer);
 }
 
-if($order->writeOrder() == "True"){
+$orderBack = $order->writeOrder();
+
+if($orderBack == "True"){
 	
 	if($doSendExalyser){
 		// JSON String for Exalyser servlet
@@ -158,10 +160,10 @@ if($order->writeOrder() == "True"){
 		}
 
 		//Orderhead mapping
-		$ordCusord['CUSORDdate'] = date('Y-m-d H:i:s');
+		$ordCusord['CUSORDdate'] = date('Y-m-d');
 		$ordCusord['CUSORDname'] = 'GSSB Bestellung '.$order->getOrderNumber();
 		$ordCusord['CUSORDno'] = $order->getOrderNumber();
-		$ordCusord['CUSORDsubject'] = 'Bestellung von '.$se->get_setting('edAbsoluteShopPath_Text');
+		$ordCusord['CUSORDsubject'] = 'Bestellung '.$order->getOrderNumber().' von '.$se->get_setting('edAbsoluteShopPath_Text');
 		$ordCusord['CUSORDpayment'] = $payment['paymName'];
 		$ordCusord['CUSORDhandling'] = $payment['paymTotal'];
 		$ordCusord['CUSORDdelivery'] = $delivery['delivName'];
@@ -243,7 +245,7 @@ if($order->writeOrder() == "True"){
 	echo json_encode($info['redirect_local']);
 	
 } else {
-	die("Etwas ist falsch gelaufen!");
+	die($orderBack);
 }
 function customer_htmlmail($doSendMail) {
 	global $sl, $se, $order, $basket, $customer, $info;
@@ -568,6 +570,7 @@ function shopowner_htmlmail() {
 	$me->content = str_replace('{GSME|TXT|SepaAccept}','',$me->content);
 	$me->msg = $metxt->content;
 	$me->htmlmsg = $me->content;
+	
 	$me->sendmail2($info['recipient'], $info['subject'], '', '', true);
 	
 	return;

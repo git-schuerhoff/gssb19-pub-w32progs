@@ -108,7 +108,7 @@ require_once("../../include/page.header.php");
 
 <div id="PGcoupondetail">
     <input type='hidden' name='act' value='a'>
-    <input type='hidden' name='lang' value='<?echo $lang;?>'>
+    <input type='hidden' name='lang' value='<?php echo $lang;?>'>
 
 <h1>&#187;&nbsp;<?php echo L_dynsb_Coupons;?>&nbsp;&#171;</h1>
 

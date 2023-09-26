@@ -33,7 +33,7 @@ $link->query("SET NAMES 'utf8'");
 <html>
 <head>
     <title>
-    <?echo L_dynsb_ChooseImage;?>
+    <?php echo L_dynsb_ChooseImage;?>
     </title>
 
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
@@ -70,9 +70,9 @@ require_once("../../include/page.header.php");
 ?>
 
 <div id="PGcouponselectfile">
-	<input type="hidden" name="lang" value="<?echo $lang;?>">
+	<input type="hidden" name="lang" value="<?php echo $lang;?>">
 	<input type="hidden" name="MAX_FILE_SIZE" value="30000000">
-	<input type='hidden' name='strcal' value='<?echo $_REQUEST['strcal'];?>'>
+	<input type='hidden' name='strcal' value='<?php echo $_REQUEST['strcal'];?>'>
 
 <h1><?php echo L_dynsb_FileUpload;?></h1>
 

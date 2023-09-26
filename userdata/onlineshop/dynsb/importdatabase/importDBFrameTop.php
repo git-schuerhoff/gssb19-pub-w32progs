@@ -149,7 +149,7 @@ function setImportDir() {
     var iMyHeight;   
     iMyWidth = Math.round((window.screen.width/2) - (400/2 + 10));
     iMyHeight = Math.round((window.screen.height/2) - (230/2 + 40));   
-        var winNew = window.open('impdirsel.php?lang=<?echo $lang;?>', 'Directory',"height=230,width=400,menubar=no,location=no,resizable=no,scrollbars=no,left="+iMyWidth+",top="+iMyHeight+"");
+        var winNew = window.open('impdirsel.php?lang=<?php echo $lang;?>', 'Directory',"height=230,width=400,menubar=no,location=no,resizable=no,scrollbars=no,left="+iMyWidth+",top="+iMyHeight+"");
  
     winNew.focus();
 }

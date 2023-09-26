@@ -2772,8 +2772,8 @@ class gs_shopengine
 	function aprove_iban( $iban ) {
 		$iban = str_replace( ' ', '', $iban );
 		$iban1 = substr( $iban,4 )
-			. strval( ord( $iban[0] )-55 )
-			. strval( ord( $iban[1] )-55 )
+			. strval( ord( $iban{0} )-55 )
+			. strval( ord( $iban{1} )-55 )
 			. substr( $iban, 2, 2 );
 
 		$rest=0;

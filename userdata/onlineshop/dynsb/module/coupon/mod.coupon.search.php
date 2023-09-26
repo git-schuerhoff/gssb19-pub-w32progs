@@ -229,7 +229,7 @@ if($SESS_languageIdNo == 2)
   	x = Math.round((screen.width-winBreite)/2);
   	y = Math.round((screen.height-winHoehe)/2);
 
-  	var dis = window.open('mod.coupon.pdf.php?coupId='+coupID+'&lang=<?echo $lang;?>','my','left='+x+',top='+y+',width='+winBreite+',height='+winHoehe+',scrollbars=no,resizable');
+  	var dis = window.open('mod.coupon.pdf.php?coupId='+coupID+'&lang=<?php echo $lang;?>','my','left='+x+',top='+y+',width='+winBreite+',height='+winHoehe+',scrollbars=no,resizable');
   	dis.focus();
   }
   //----------------------------------------------------------------------------
@@ -326,10 +326,10 @@ require_once("../../include/page.header.php");
 	&nbsp;&nbsp;
   <?php echo L_dynsb_Status;?>:
   <select name="coupStatus">
-    <option value='0'><?echo L_dynsb_All;?></option>
-    <option value='1'><?echo L_dynsb_Cashed;?></option>
-    <option value='2'><?echo L_dynsb_Assigned;?></option>
-    <option value='3'><?echo L_dynsb_Free;?></option>
+    <option value='0'><?php echo L_dynsb_All;?></option>
+    <option value='1'><?php echo L_dynsb_Cashed;?></option>
+    <option value='2'><?php echo L_dynsb_Assigned;?></option>
+    <option value='3'><?php echo L_dynsb_Free;?></option>
   </select>
 </p>
 

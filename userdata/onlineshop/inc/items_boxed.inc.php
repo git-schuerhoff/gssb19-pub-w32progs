@@ -217,6 +217,11 @@ while($z = mysqli_fetch_assoc($erg))
 	
 	//Itemprice
 	$this_box = str_replace('{GSSE_INCL_ITEMPRICE}',$this->get_currency($aPrices['price'],0,'.'),$this_box);
+	if($aPrices['price'] > 0){
+		$this_box = str_replace('{GSSE_INCL_PRICESTYLE}','',$this_box);
+	} else {
+		$this_box = str_replace('{GSSE_INCL_PRICESTYLE}','display:none;',$this_box);
+	}
 	//New template
 	$this_box = str_replace('{GSSE_INCL_PRICECLASS}',$priceclass,$this_box);
 	//Add to cart button

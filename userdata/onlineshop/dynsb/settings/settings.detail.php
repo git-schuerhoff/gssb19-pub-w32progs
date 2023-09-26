@@ -133,7 +133,7 @@ if(strtolower($act) == "e")
 	    x = Math.round((screen.width-winBreite)/2);
 	    y = Math.round((screen.height-winHoehe)/2);
 
-	    var helpwin = window.open('settings.change.php?lang=<?echo $lang;?>','help','left='+x+',top='+y+',width='+winBreite+',height='+winHoehe+',scrollbars=no,resizable');
+	    var helpwin = window.open('settings.change.php?lang=<?php echo $lang;?>','help','left='+x+',top='+y+',width='+winBreite+',height='+winHoehe+',scrollbars=no,resizable');
 	    helpwin.focus();
     }
     </script>

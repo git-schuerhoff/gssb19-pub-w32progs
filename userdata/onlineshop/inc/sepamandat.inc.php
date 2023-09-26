@@ -41,7 +41,6 @@ if($payment['paymInternalName'] == 'PaymentDirectDebit'){
 	$this->content = str_replace('{GSSE_INCL_CITY}', $customer['city'], $this->content);
 	$this->content = str_replace('{GSSE_INCL_STATE}', $customer['areaName'], $this->content);
 	$this->content = str_replace('{GSSE_INCL_ACCOUNTHOLDER1}', $customer['firstname'].' '.$customer['lastname'], $this->content);
-	$this->content = str_replace('{GSSE_INCL_FinancialInstitution}', $customer['financialinstitution'], $this->content);
 	$this->content = str_replace('{GSSE_INCL_ACCOUNTNUMBER}', $customer['iban'], $this->content);
 	//$this->content = str_replace('{GSSE_INCL_BANKNUMBER}', $customer['bic'], $this->content);
 } else {

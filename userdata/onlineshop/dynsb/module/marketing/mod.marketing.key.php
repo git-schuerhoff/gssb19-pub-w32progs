@@ -175,7 +175,7 @@ if (isset($_REQUEST['show_edit']))
   <table>
   <tr>
     <td valign="top">
-		<input type="hidden" name="lang" value="<?echo $lang;?>">
+		<input type="hidden" name="lang" value="<?php echo $lang;?>">
     	<h2><?php echo L_dynsb_MarkKey;?></h2>
 		<p><input type="hidden" name="editId" value='<?php echo $obj->mkKey;?>'>
 	 	   <input name="edit_key" maxlength="10" value="<?php echo $obj->mkKey;?>">

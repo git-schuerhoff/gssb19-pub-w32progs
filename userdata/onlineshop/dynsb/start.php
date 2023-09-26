@@ -66,11 +66,11 @@ include("lang/lang_".$lang.".php");
 
 <frameset cols="210,*" onBeforeUnload="javascript:closeIt()" frameborder="0">
  <frameset rows="80,*,90" frameborder="0" framespacing="0">
-      <frame name="topFrame" src="logo.php?lang=<?echo $lang;?>" marginwidth="10" marginheight="10" scrolling="no" frameborder="0" framespacing="0">
-      <frame name="naviFrame" src="navi/index.php?lang=<?echo $lang;?>" NORESIZE SCROLLING="auto" frameborder="0" marginwidth="10" marginheight="0" framespacing="0">
-      <frame name="buttonFrame" src="button.php?lang=<?echo $lang;?>" marginwidth="10" marginheight="10" scrolling="no" frameborder="0" framespacing="0">
+      <frame name="topFrame" src="logo.php?lang=<?php echo $lang;?>" marginwidth="10" marginheight="10" scrolling="no" frameborder="0" framespacing="0">
+      <frame name="naviFrame" src="navi/index.php?lang=<?php echo $lang;?>" NORESIZE SCROLLING="auto" frameborder="0" marginwidth="10" marginheight="0" framespacing="0">
+      <frame name="buttonFrame" src="button.php?lang=<?php echo $lang;?>" marginwidth="10" marginheight="10" scrolling="no" frameborder="0" framespacing="0">
  </frameset>
-<frame name="contentFrame" src="help/about.php?lang=<?echo $lang;?>" NORESIZE SCROLLING="auto" frameborder="0" marginwidth="10" marginheight="0" framespacing="0">
+<frame name="contentFrame" src="help/about.php?lang=<?php echo $lang;?>" NORESIZE SCROLLING="auto" frameborder="0" marginwidth="10" marginheight="0" framespacing="0">
 
   <noframes>
     <p>Diese Seite verwendet Frames. Bei Ihnen werden keine Frames angezeigt. <br />

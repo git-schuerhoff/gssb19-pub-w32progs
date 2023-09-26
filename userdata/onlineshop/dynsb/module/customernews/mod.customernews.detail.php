@@ -111,7 +111,7 @@ if($SESS_languageIdNo == 2) $strcal = "en";
 
     iMyWidth = Math.round((window.screen.width/2) - (400/2 + 10));
     iMyHeight = Math.round((window.screen.height/2) - (180/2 + 40));
-    var winNew = window.open('mod.customernews.select.file.php?nid='+document.frmCnews.cnewsIdNo.value+'&lang=<?echo $lang;?>', 'upload',"height=180,width=400,menubar=no,location=no,resizable=no,scrollbars=no,left="+iMyWidth+",top="+iMyHeight+"");
+    var winNew = window.open('mod.customernews.select.file.php?nid='+document.frmCnews.cnewsIdNo.value+'&lang=<?php echo $lang;?>', 'upload',"height=180,width=400,menubar=no,location=no,resizable=no,scrollbars=no,left="+iMyWidth+",top="+iMyHeight+"");
     winNew.focus();
   }
   //----------------------------------------------------------------------------
@@ -260,7 +260,7 @@ if ($act=="e")
 
 <div class="footer">
   <input type="button" class="button" onclick="javascript:checkdate();submitForm('frmCnews');" name="btn_save" value="<?php echo L_dynsb_Save;?>">
-  <input type="button" class="button" onclick="javascript:this.location.href='mod.customernews.search.php?start=<?php echo $start;?>&lang=<?echo $lang;?>';" name="btn_save" value="<?php echo L_dynsb_Cancel;?>">
+  <input type="button" class="button" onclick="javascript:this.location.href='mod.customernews.search.php?start=<?php echo $start;?>&lang=<?php echo $lang;?>';" name="btn_save" value="<?php echo L_dynsb_Cancel;?>">
 </div>
 </div>
 
