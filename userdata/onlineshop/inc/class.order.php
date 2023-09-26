@@ -753,7 +753,7 @@ class Order{
 		
 		for($x = 1; $x <= $maxBasket; $x++)
 		{
-			if($checkinstock != 'False'){
+			/*if($checkinstock != 'False'){
 				$sql = "SELECT itemInStockQuantity FROM ".$this->se->dbtoken."itemdata WHERE itemItemNumber ='".$this->Basket[$x-1]['art_num']."'";
 				$qry = @mysqli_query($con,$sql);
 				$obj = @mysqli_fetch_array($qry);
@@ -762,7 +762,7 @@ class Order{
 				}elseif($obj['itemInStockQuantity'] < $this->Basket[$x-1]['art_count']){
 					return $this->Basket[$x-1]['art_num'].'instockquantity'.$obj['itemInStockQuantity'];
 				}
-			}
+			}*/
 			if($this->Basket[$x-1]['art_num'] != null){
 				$aPosData[$x]['ordpItemId'] = $this->Basket[$x-1]['art_num'];
 				$aPosData[$x]['ordpItemDesc'] = base64_encode($this->Basket[$x-1]['art_title']);
@@ -938,7 +938,7 @@ class Order{
 			$sOrdValues .= $this->Payment['paymID'];
 			
 			$SQLord = "INSERT INTO ".$this->se->dbtoken."order (ordDate,".$sOrdKeys.",ordSLC,ordChgHistoryFlg, ordIP ) VALUES (NOW()+0,".$sOrdValues.",'".$this->slc."','1','".$cusIP."')";
-            //die(var_dump($SQLord));
+            //die($SQLord);
 			$qryord = @mysqli_query($con,$SQLord);
 			if(mysqli_errno($con) != 0)
 			{

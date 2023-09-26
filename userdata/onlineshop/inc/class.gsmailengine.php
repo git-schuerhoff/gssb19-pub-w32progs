@@ -215,17 +215,17 @@ class gs_mailengine
 	}
 	
 	function em_text($tag,$param,&$content_loc,$i) {
-		if(array_key_exists($param, $this->info)) {
+		if($this->info != null && array_key_exists($param, $this->info)) {
 			$content_loc = str_replace($tag,$this->info[$param],$content_loc);
-		}elseif(array_key_exists($param, $this->customer)) {
+		}elseif($this->customer != null && array_key_exists($param, $this->customer)) {
 			$content_loc = str_replace($tag,$this->customer[$param],$content_loc);
-		}elseif(array_key_exists($param, $this->payment)) {
+		}elseif($this->payment != null && array_key_exists($param, $this->payment)) {
 			$content_loc = str_replace($tag,$this->payment[$param],$content_loc);
-		}elseif(array_key_exists($param, $this->delivery)) {
+		}elseif($this->delivery != null && array_key_exists($param, $this->delivery)) {
 			$content_loc = str_replace($tag,$this->delivery[$param],$content_loc);
 		}elseif(array_key_exists($param, $this->basket[$i])) {
 			$content_loc = str_replace($tag,$this->basket[$i][$param],$content_loc);
-		}elseif(array_key_exists($param, $this->InvoiceMail)) {
+		}elseif($this->InvoiceMail != null && array_key_exists($param, $this->InvoiceMail)) {
 			$content_loc = str_replace($tag,$this->InvoiceMail[$param],$content_loc);
 		}else{
 			$content_loc = str_replace($tag,'',$content_loc);
